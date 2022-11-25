@@ -13,3 +13,9 @@ const BookDetail = (book) => {
     return bookDetail;
 
   };
+  const BookDetailRemove = () => {
+
+    let bookDetailRemove = null;
+    return bookDetailRemove;
+
+  };

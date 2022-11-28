@@ -33,13 +33,6 @@ function renderBookList(bookList) {
   })
 }
 
-async function getBookDetail(bookid) {
-  const result = await fetch(url + `/${bookid}`)
-    .then((result) => result.json())
-    .catch((e) => e)
-  return result;
-}
-
 /*Du kan ju ta en hel del inspiration från hur ul listan renderas
 Börja med att försöka få fram en div nånstans när du kör mouse over på nåt i listan
 Tips : skapa en lista med hjälp av queryselector all som du sedan gör en for each loop på för att fästa eventlistener

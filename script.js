@@ -27,7 +27,9 @@ function renderBookList(bookList) {
 
   const listElement = document.querySelectorAll('.book-list__item');
   listElement.forEach((item) =>{
+
     item.addEventListener("mouseover", (e) => {
+
       getBookDetail(e.target.id).then((object) => (item.insertAdjacentHTML("beforeend", BookDetail(object, e.pageX, e.pageY))));
 
       item.addEventListener("mousemove", (e) => {
@@ -38,6 +40,7 @@ function renderBookList(bookList) {
         }
         
       })
+
       item.addEventListener("mouseout", (e) =>{
         const existingPopup = document.getElementById("BookDetail");
         if(existingPopup){

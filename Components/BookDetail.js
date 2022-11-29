@@ -1,6 +1,6 @@
-const BookDetail = (book) => {
+const BookDetail = (book, x, y) => {
 
-    let bookDetail = `<div id=${book.id} class="book-item__detail flex bg-slate-600 text-slate-200 w-auto absolute rounded-md border-2 border-slate-900 p-4 w-full mx-auto p-">
+    let bookDetail = `<div id="BookDetail" class="book-item__detail flex bg-slate-600 text-slate-200 w-auto absolute rounded-md border-2 border-slate-900 p-4 w-full mx-auto p- top-[${y+10}px] left-[${x+10}px]">
                         <img src="${book.coverImage}" onerror="this.style.display='none'" width="150px" height="250px"</img>
                         <div class="p-4">
                           <p class="py-2.5" > ID: ${book.id}</p>

@@ -29,22 +29,22 @@ function renderBookList(bookList) {
   listElement.forEach((item) =>{
     item.addEventListener("mouseover", (e) => {
       getBookDetail(e.target.id).then((object) => (item.insertAdjacentHTML("beforeend", BookDetail(object, e.pageX, e.pageY))));
-    })
 
-    item.addEventListener("mouseout", () =>{
-      
-      const existingPopup = document.getElementById("BookDetail");
-      existingPopup.remove();
+      item.addEventListener("mousemove", (e) => {
+        const existingPopup = document.getElementById("BookDetail");
+        if(existingPopup){
+        existingPopup.style.left = e.pageX+10 + 'px';
+        existingPopup.style.top = e.pageY+10 + 'px';
+        }
+        
+      })
+      item.addEventListener("mouseout", (e) =>{
+        const existingPopup = document.getElementById("BookDetail");
+        if(existingPopup){
+          existingPopup.remove();
+        }
+      })
     })
-    
-    item.addEventListener("mousemove", (e) => {
-      const existingPopup = document.getElementById("BookDetail");
-      if(existingPopup){
-      existingPopup.style.left = e.pageX + 'px';
-      existingPopup.style.top = e.pageY + 'px';
-      }
-    })
-
   })
 }
 
